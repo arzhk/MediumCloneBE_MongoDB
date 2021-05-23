@@ -31,6 +31,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+    console.log(req.body);
     const newArticle = new articlesSchema(req.body);
     const { _id } = await newArticle.save();
     res.status(201).send(_id);
@@ -69,6 +70,13 @@ router.delete("/:id", async (req, res, next) => {
   } catch (err) {
     console.log(err);
     next(err);
+  }
+});
+
+router.post("/:articleID", async (req, res, next) => {
+  try {
+  } catch (err) {
+    console.log(err);
   }
 });
 

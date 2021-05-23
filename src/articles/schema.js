@@ -15,6 +15,7 @@ const articleSchema = new Schema(
       img: String,
     },
     cover: String,
+    responses: [String],
   },
   {
     timestamps: true,
